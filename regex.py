@@ -65,7 +65,7 @@ def shunt(infix):
     # convert output list to string
         return ''.join(postfix)
 
-def regex_compile(infix):
+def compile(infix):
     postfix = shunt(infix)
     postfix = list(postfix)[::-1]
 
@@ -115,14 +115,51 @@ def regex_compile(infix):
     # The NFA stack should have exactly one NFA on it.
     return nfa_stack.pop()
 
+# Add a state to a set, and follow all of the e(psilon0 arrows.
+def followes(state, current):
+    # only do something when we haven't already seen the state.
+    if state not in current:
+        # put the state itself into current
+        current.add(state)
+        # see wether state is labelled by e(psilon).
+        if state.label is None:
+            # loop through the states pointed to by this state.
+            for x in state.edges:
+                # follow all of their e(psilon)s too.
+                followes(x, current)
+
 def match(regex, s):
     # This function will return true if and only if the regular expression
     # regex (fully) matches the string s . it returns false otherwise.
 
     # compile the regular expressions into an NFA
-    nfa = regex_compile(regex)
-    # Ask  the NFA if it matches the string s.
-    return nfa
+    nfa = compile(regex)
 
-print(match("a.b|b*","bbbbbbbbbb"))
+    # Try to match the regular expression to the string s.
+    # the current set of states.
+    current = set()
+    # Add the first satate,and folow all e(psilon) arrows.
+    followes(nfa.start, current)
+    # the previous set of states.
+    previous = set()
+
+    # Loop through characters in s
+    for c in s:
+        # keep track of where we were    
+        previous = current
+        # create a new empty set for states we are about to be in.
+        current = set()
+        # Lopp through the previous states.
+        for state in previous:
+            # only follow arrows with not lablled by e(psilon).
+            if state.label is not None:
+                # if label of the state is equal to the character we have read:
+                if state.label == c:
+                    # Add the state at the end of the arrow to the current.
+                    followes(state.edges[0], current)
+
+    # Ask  the NFA if it matches the string s.
+    return nfa.accept in current
+
+print(match("a.b|b*","xbbbbbbbbbb"))
 
