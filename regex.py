@@ -2,36 +2,31 @@
 # Classes used in Thompson's construction
 
 class State:
-    # Every stste has 0,1 or 2 edges from it
-    edges = []
-
-    # Label for the arrows.None means epsilon.
-    label = None
-
+    """A State with one or two edges, all edges labeled by label."""
     # Constructor for the Class
-    def __init__(self, label=None, edges=[]):
-        self.edges = edges
+    def __init__(self, label=None, edges=None):
+        # Every stste has 0,1 or 2 edges from it
+        self.edges = edges if edges else []
+        # Label for the arrows.None means epsilon.
         self.label = label
 
 class Fragment:
-    # Start state of the NFA fragment
-    start = None
-    # Accept state of the NFA fragment
-    accept = None
-
+    """An NFA fragment with a start and an accept state."""
     # Constructor
     def __init__(self, start, accept):
+        # Start state of the NFA fragment
         self.start = start
+        # Accept state of the NFA fragment
         self.accept = accept
 
 def shunt(infix):
-
+    """Return the infix regular expression in postfix."""
     # convert input into stack-ish list
     infix  = list(infix)[::-1]
+    
     #operator stack 
-    opers = []
-    #output list.
-    postfix = []
+    opers, postfix = [], []
+    
     # operator precedence
     prec = {'*':100, '.':80, '|':60, ')':40, '(':20}
     # Loop through the input one character at a time
@@ -66,9 +61,13 @@ def shunt(infix):
         return ''.join(postfix)
 
 def compile(infix):
+    """Return an NFA Fragment representing the infix regular expression"""
+    # Convert infix to postfix
     postfix = shunt(infix)
+    # Make postfix a stack of characters.
     postfix = list(postfix)[::-1]
-
+    
+    #A stack of NFA fragments
     nfa_stack = []
 
     while postfix:
@@ -80,8 +79,10 @@ def compile(infix):
             frag2 = nfa_stack.pop()
             # point frag2's accept state at frag1's start state
             frag2.accept.edges.append(frag1.start)
-            # create new instance of Fragment to represent the new NFA
-            newfrag = Fragment(frag2.start, frag1.accept)
+            # The new start state is frag2's
+            start = frag2.start
+            # The new accept state is frag1's
+            accept = frag1.accept
         elif c == '|':
             # pop two fragments off the stack
             frag1 = nfa_stack.pop()
@@ -92,8 +93,6 @@ def compile(infix):
             # point the old accept states at the new one
             frag2.accept.edges.append(accept)
             frag1.accept.edges.append(accept)
-            # create new instance of Fragment to represent the new NFA
-            newfrag = Fragment(start,accept)
         elif c == '*':
             # pop a single fragment off the stack
             frag = nfa_stack.pop()
@@ -102,13 +101,12 @@ def compile(infix):
             start = State(edges=[frag.start, accept])
             # point the arrows
             frag.accept.edges = [frag.start, accept]
-            # create new instance of fragment to represent the new NFA
-            newfrag = Fragment(start, accept)
         else:
             accept = State()
             start = State(label=c, edges=[accept])
-            # create new instance of fragment to represent the new NFA
-            newfrag = Fragment(start, accept)
+
+        # create new instance of Fragment to represent the new NFA
+        newfrag = Fragment(start, accept)
         # push the new NFA to the NFA stack
         nfa_stack.append(newfrag)
 
@@ -161,5 +159,6 @@ def match(regex, s):
     # Ask  the NFA if it matches the string s.
     return nfa.accept in current
 
-print(match("a.b|b*","xbbbbbbbbbb"))
+if __name__ == "__main__":
+    print(match("a.b|b*","bbbbbbbbbbx"))
 
