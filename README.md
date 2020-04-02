@@ -7,12 +7,16 @@ Program in Python to execute regular expressions on strings using an algorithm k
 * Macth the infix with a string.
 ## Running the project
 1. Git clone the repository.
-2. Change the directory to the project root folder
-3. Run the program using "python3 Project.py".
+2. Change the directory to the project root folder using cd and folder name.
+3. Run the program using "python3 runProject.py".
+4. Enter infix notation and Press enter.
+5. Enter String to match and Press enter.
+6. Matched or not Matched message will print on screen depending on the result.
 ## Research
 * Research on infix to postfix conversion
   * research-infixtopostfix.py
   * StateClass.py 
+  * Run research-infixtopostfix.py using python3 research-infixtopostfix.py
   * https://stackoverflow.com/questions/27586287/infix-to-postfix-conversion-in-python
 
 * A Well Written java program to convert regular expressions into NFA using thompsons construction
