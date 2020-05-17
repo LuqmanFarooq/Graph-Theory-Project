@@ -16,6 +16,7 @@ Program in Python to execute regular expressions on strings using an algorithm k
 * Research on infix to postfix conversion
   * research-infixtopostfix.py
   * StateClass.py 
+  * testing.py in which i have done unit testing on shunting algorithm and match algorithm.
   * Run research-infixtopostfix.py using python3 research-infixtopostfix.py
   * https://stackoverflow.com/questions/27586287/infix-to-postfix-conversion-in-python
 
@@ -26,7 +27,7 @@ Program in Python to execute regular expressions on strings using an algorithm k
   * https://www.geeksforgeeks.org/regular-expression-to-nfa/
 
 * NFA VS DFA
-  https://www.youtube.com/watch?v=FZp7CJwe6nw
+  * https://www.youtube.com/watch?v=FZp7CJwe6nw
 * Unit Testing
-https://docs.python.org/3/library/unittest.html
-https://www.journaldev.com/15899/python-unittest-unit-test-example
+  * https://docs.python.org/3/library/unittest.html
+  * https://www.journaldev.com/15899/python-unittest-unit-test-example
