@@ -28,5 +28,5 @@ Program in Python to execute regular expressions on strings using an algorithm k
 * NFA VS DFA
   https://www.youtube.com/watch?v=FZp7CJwe6nw
 * Unit Testing
-  https://docs.python.org/3/library/unittest.html
-  https://www.journaldev.com/15899/python-unittest-unit-test-example
+https://docs.python.org/3/library/unittest.html
+https://www.journaldev.com/15899/python-unittest-unit-test-example
