@@ -6,6 +6,19 @@ It has menu for the user and prompts for the user to enter their own infix notat
 
 # importing the regex.py file which includes all the methods and algorithms
 import regex
+# importing argparse library for command line arguments
+import argparse
+
+# creating the parser
+parser = argparse.ArgumentParser(usage="Help - Instruction to test the program")
+
+# Add the arguments
+parser.add_argument('infixexpression', help="Enter infix expression e.g (a.b|b*)")
+
+parser.add_argument('String', help="Eter a string to match  e.g (bbbbbb)")
+
+# parse the arguments
+args = parser.parse_args()
 
 # Printing Header on the Screen
 print("-----------------------Muhammad Luqman------------------G00353385----------------Graph Theory Project------------------------")
@@ -35,4 +48,3 @@ if(regex.match(u_infix,string)) == True:
 # if the result is False then it prints the following statement
 elif(regex.match(u_infix,string)) == False:
     print("The inputs not Matched")
-
