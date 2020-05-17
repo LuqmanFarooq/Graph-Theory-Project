@@ -26,7 +26,7 @@ The repository contains hello.c, hello.py, myScript.py, regex.py, shunting.py, t
 * A system running Windows 10 with admin privileges
 * Command Prompt (comes with Windows by default)
 ### Python 3 Installation on Windows
-**Step 1: Download Python Executable Installer**
+### Step 1: Download Python Executable Installer
 1. Open your web browser and navigate to the Downloads for Windows section of the official Python website.
 2. Search for your desired version of Python3.
 3. Select a link to download either the Windows x86-64 executable installer or Windows x86 executable installer. The download is approximately 25MB.
@@ -83,5 +83,20 @@ As you can see, it is cleaner and more manageable.
 3. Run the program using "python3 runProject.py" or "python runProject.py" in cmd.
 4. Enter infix notation and Press enter.
 5. Enter String to match and Press enter.
-# Test
+
 Matched or not Matched message will print on screen depending on the result.
+# Test
+## Unit Testing
+Run the testing file named as testing.py using "python3 testing.py" or "python testing.py" in cmd.
+
+it uses the assert function of the python to unit test the function shunt of shunting algorithm and and the function match with a lists of tests.
+
+## General Testing
+Run the testing file name myScripts.py  using "python3 myScripts.py" or "python myScripts.py" in cmd.
+
+it uses the assert function of the python to do a list of tests wirtten in the file to match expressions and strings.
+
+# Algorithms Used
+
+## Shunting Yard Algorithm
+
