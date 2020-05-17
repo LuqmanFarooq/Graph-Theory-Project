@@ -3,7 +3,7 @@ Python program that can build a non-deterministic ﬁnite automaton (NFA) from a
 
 The repository contains hello.c, hello.py, myScript.py, regex.py, shunting.py, testing.py, runProject.py, research-infixtopostfix.py, StackClass.py
 
-**hello.c** = contains sample program written in c language.-
+**hello.c** = contains sample program written in c language._
 **hello.py** = contains a program written in python programming language which is the same sample program which was written in c language in hello.c
 **Shunting.py** = contains the shunting yard algorithm which take in an infix expression and converts it into postfix expression.
 **regex.py** = contains all the functions for converting infix to postfix, creating NFA fragments and then comparing.
