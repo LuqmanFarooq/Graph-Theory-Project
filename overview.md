@@ -76,3 +76,12 @@ By setting this up, you can execute Python scripts like this: Python script.py
 Instead of this: C:/Python34/Python script.py
 
 As you can see, it is cleaner and more manageable.
+
+### Running the Project
+1. open cmd in the folder where you want to save the project.and in cmd type git clone https://github.com/LuqmanFarooq/Graph-Theory-Project.
+2. Change the directory to the project root folder using cd and folder name e.g "cd Graph-Theory-project".
+3. Run the program using "python3 runProject.py" or "python runProject.py" in cmd.
+4. Enter infix notation and Press enter.
+5. Enter String to match and Press enter.
+# Test
+Matched or not Matched message will print on screen depending on the result.
