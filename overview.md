@@ -157,6 +157,11 @@ This function will return true if and only if the regular expression regex (full
 * Ask  the NFA if it matches the string s.
 ## Command Line Interface Arguments
 Python also has a module called argparse in the standard library for parsing command-line arguments.
+##### usage:
+In the project root folder open cmd and type python3 commandlineArguments.py -h to see the help commands.
+then
+
+python3 commandlineArguments.py -i=a.b -s=ab
 # Refrences
 * https://medium.com/@gregorycernera/converting-regular-expressions-to-postfix-notation-with-the-shunting-yard-algorithm-63d22ea1cf88
 * https://stackoverflow.com/questions/27586287/infix-to-postfix-conversion-in-python
