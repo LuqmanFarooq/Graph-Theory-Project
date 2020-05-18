@@ -155,5 +155,15 @@ This function will return true if and only if the regular expression regex (full
 * only follow arrows with not lablled by e(psilon).
 * if label of the state is equal to the character we have read:Add the state at the end of the arrow to the current.
 * Ask  the NFA if it matches the string s.
+## Command Line Interface Arguments
+Python also has a module called argparse in the standard library for parsing command-line arguments.
 # Refrences
 * https://medium.com/@gregorycernera/converting-regular-expressions-to-postfix-notation-with-the-shunting-yard-algorithm-63d22ea1cf88
+* https://stackoverflow.com/questions/27586287/infix-to-postfix-conversion-in-python
+* https://github.com/prijatelj/thompson-construction/blob/master/Thompson.java
+* https://www.geeksforgeeks.org/regular-expression-to-nfa/
+* https://www.youtube.com/watch?v=FZp7CJwe6nw
+* https://github.com/michellelally/Graph-Theory-Project/wiki/Postfix-to-NFA-Conversion-Algorithm
+* https://www.youtube.com/watch?v=QILBGC7TApM
+* https://docs.python.org/3/library/unittest.html
+* https://www.journaldev.com/15899/python-unittest-unit-test-example
