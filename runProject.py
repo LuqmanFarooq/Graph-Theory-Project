@@ -10,15 +10,9 @@ import regex
 import argparse
 
 # creating the parser
-parser = argparse.ArgumentParser(usage="Help - Instruction to test the program")
+parser = argparse.ArgumentParser(usage="Help - Instruction to test the program",epilog="Enter infix E.g (a.b|b*) and Enter string E.g bbbb")
 
-# Add the arguments
-parser.add_argument('infixexpression', help="Enter infix expression e.g (a.b|b*)")
 
-parser.add_argument('String', help="Eter a string to match  e.g (bbbbbb)")
-
-# parse the arguments
-args = parser.parse_args()
 
 # Printing Header on the Screen
 print("-----------------------Muhammad Luqman------------------G00353385----------------Graph Theory Project------------------------")
