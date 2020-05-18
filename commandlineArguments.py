@@ -2,8 +2,7 @@
 # Muhammad Luqman
 # G00353385
 
-"""This is the script that is used to the run the program.
-It has menu for the user and prompts for the user to enter their own infix notations and the string to match"""
+"""This is the script that has the commandline arguments."""
 
 # importing the regex.py file which includes all the methods and algorithms
 import regex
