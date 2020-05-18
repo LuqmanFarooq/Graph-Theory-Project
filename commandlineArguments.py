@@ -15,7 +15,7 @@ parser = argparse.ArgumentParser(usage="Help - Instruction to test the program",
 
 #Add the parameters positional/optional
 parser.add_argument('-i','--infix', help="Infix notation e.g a.b")
-parser.add_argument('-s','--stringMatch', help="Infix notation e.g ab")
+parser.add_argument('-s','--stringMatch', help="String to Match e.g ab")
 # parse the arguments
 args = parser.parse_args()
 
